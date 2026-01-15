@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2026 AI Websites & Apps Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #1a1a1a;
+            overflow-x: hidden;
+            padding: 1%;
+            min-height: 100vh;
+        }
+
+        .app-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3% 1%;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5%;
+            letter-spacing: 0.5px;
+        }
+
+        .header p {
+            font-size: 0.75rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+            height: 0;
+        }
+
+        .nav-tab {
+            flex: 1;
+            min-width: 80px;
+            padding: 2% 1%;
+            background: none;
+            border: none;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #6c757d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .content {
+            padding: 1%;
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            margin-bottom: 1.5%;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 1%;
+            padding-bottom: 0.5%;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 1%;
+        }
+
+        .section-title::before {
+            content: '▸';
+            font-size: 0.9rem;
+        }
+
+        .ai-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5%;
+            margin-bottom: 1%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .ai-card:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1%;
+        }
+
+        .ai-name {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .ai-badge {
+            font-size: 0.6rem;
+            padding: 0.3% 1.5%;
+            border-radius: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-free { background: #d4edda; color: #155724; }
+        .badge-freemium { background: #fff3cd; color: #856404; }
+        .badge-paid { background: #f8d7da; color: #721c24; }
+        .badge-open { background: #d1ecf1; color: #0c5460; }
+
+        .ai-desc {
+            font-size: 0.7rem;
+            color: #6c757d;
+            line-height: 1.5;
+            margin-bottom: 1%;
+        }
+
+        .ai-link {
+            font-size: 0.65rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5%;
+        }
+
+        .step-card {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 3px solid #667eea;
+            border-radius: 6px;
+            padding: 1.5%;
+            margin-bottom: 1%;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 1%;
+        }
+
+        .step-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5%;
+            display: inline;
+        }
+
+        .step-desc {
+            font-size: 0.7rem;
+            color: #495057;
+            line-height: 1.5;
+            margin-top: 0.5%;
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            gap: 1%;
+            padding: 1.5%;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1%;
+            border: 1px solid #e9ecef;
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .skill-beginner { background: #d4edda; }
+        .skill-intermediate { background: #fff3cd; }
+        .skill-advanced { background: #f8d7da; }
+
+        .skill-info {
+            flex: 1;
+        }
+
+        .skill-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.3%;
+        }
+
+        .skill-desc {
+            font-size: 0.65rem;
+            color: #6c757d;
+            line-height: 1.4;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1%;
+            margin-bottom: 1.5%;
+        }
+
+        .category-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 2%;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:active {
+            transform: translateY(-2px);
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .category-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1%;
+        }
+
+        .category-name {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1.5%;
+            font-size: 0.75rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 1.5%;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            border-left: 4px solid #667eea;
+            border-radius: 6px;
+            padding: 1.5%;
+            margin-bottom: 1%;
+            font-size: 0.7rem;
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        .tip-box strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 0.5%;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 1%;
+            flex-wrap: wrap;
+            margin-top: 1%;
+        }
+
+        .quick-link {
+            flex: 1;
+            min-width: 100px;
+            padding: 1.5%;
+            background: #667eea;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .quick-link:active {
+            transform: scale(0.95);
+            background: #5568d3;
+        }
+
+        @media (max-width: 480px) {
+            .header h1 { font-size: 1rem; }
+            .header p { font-size: 0.7rem; }
+            .nav-tab { font-size: 0.65rem; padding: 2.5% 1%; }
+            .category-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <h1>🤖 2026 AI Guide</h1>
+            <p>Your Complete Guide to AI Websites, Apps & Skills</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="switchTab('directory')">Directory</button>
+            <button class="nav-tab" onclick="switchTab('getting-started')">Get Started</button>
+            <button class="nav-tab" onclick="switchTab('step-by-step')">Step-by-Step</button>
+            <button class="nav-tab" onclick="switchTab('skills')">Skills</button>
+            <button class="nav-tab" onclick="switchTab('beginner')">Beginner</button>
+        </div>
+
+        <div class="content">
+            <!-- DIRECTORY TAB -->
+            <div id="directory" class="tab-content active">
+                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search AI tools..." onkeyup="searchAI()">
+                
+                <div class="category-grid">
+                    <div class="category-card" onclick="filterCategory('all')">
+                        <div class="category-icon">🌐</div>
+                        <div class="category-name">All Tools</div>
+                    </div>
+                    <div class="category-card" onclick="filterCategory('text')">
+                        <div class="category-icon">✍️</div>
+                        <div class="category-name">Text AI</div>
+                    </div>
+                    <div class="category-card" onclick="filterCategory('image')">
+                        <div class="category-icon">🎨</div>
+                        <div class="category-name">Image AI</div>
+                    </div>
+                    <div class="category-card" onclick="filterCategory('video')">
+                        <div class="category-icon">🎬</div>
+                        <div class="category-name">Video AI</div>
+                    </div>
+                    <div class="category-card" onclick="filterCategory('audio')">
+                        <div class="category-icon">🎵</div>
+                        <div class="category-name">Audio AI</div>
+                    </div>
+                    <div class="category-card" onclick="filterCategory('code')">
+                        <div class="category-icon">💻</div>
+                        <div class="category-name">Code AI</div>
+                    </div>
+                </div>
+
+                <div id="aiList">
+                    <div class="section">
+                        <div class="section-title">Conversational AI</div>
+                        
+                        <div class="ai-card" data-category="text">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Claude (Anthropic)</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">Advanced AI assistant for writing, analysis, coding, and research. Sonnet 4.5 is the smartest model in 2026.</div>
+                            <a href="https://claude.ai" class="ai-link">claude.ai →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="text">
+                            <div class="ai-card-header">
+                                <div class="ai-name">ChatGPT (OpenAI)</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">Versatile AI chatbot for conversations, content creation, and problem-solving. GPT-4 and GPT-4o available.</div>
+                            <a href="https://chat.openai.com" class="ai-link">chat.openai.com →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="text">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Gemini (Google)</div>
+                                <span class="ai-badge badge-free">Free</span>
+                            </div>
+                            <div class="ai-desc">Google's multimodal AI for text, images, and data analysis with deep integration into Google services.</div>
+                            <a href="https://gemini.google.com" class="ai-link">gemini.google.com →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="text">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Perplexity AI</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">AI-powered search engine with citations and real-time web access for accurate information.</div>
+                            <a href="https://perplexity.ai" class="ai-link">perplexity.ai →</a>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Image Generation AI</div>
+                        
+                        <div class="ai-card" data-category="image">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Midjourney</div>
+                                <span class="ai-badge badge-paid">Paid</span>
+                            </div>
+                            <div class="ai-desc">Premium AI art generator creating stunning, high-quality images from text prompts via Discord.</div>
+                            <a href="https://midjourney.com" class="ai-link">midjourney.com →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="image">
+                            <div class="ai-card-header">
+                                <div class="ai-name">DALL-E 3</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">OpenAI's advanced image generator with precise prompt understanding, integrated into ChatGPT Plus.</div>
+                            <a href="https://openai.com/dall-e-3" class="ai-link">openai.com/dall-e-3 →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="image">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Stable Diffusion</div>
+                                <span class="ai-badge badge-open">Open Source</span>
+                            </div>
+                            <div class="ai-desc">Open-source image generation AI with community models and local installation options.</div>
+                            <a href="https://stability.ai" class="ai-link">stability.ai →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="image">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Leonardo AI</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">AI art platform with fine-tuned models for consistent characters, game assets, and creative projects.</div>
+                            <a href="https://leonardo.ai" class="ai-link">leonardo.ai →</a>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Video & Animation AI</div>
+                        
+                        <div class="ai-card" data-category="video">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Runway ML</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">Advanced video editing and generation with Gen-3 for text-to-video and creative video manipulation.</div>
+                            <a href="https://runwayml.com" class="ai-link">runwayml.com →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="video">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Pika Labs</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">Text-to-video and image-to-video AI for creating short animated clips and motion content.</div>
+                            <a href="https://pika.art" class="ai-link">pika.art →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="video">
+                            <div class="ai-card-header">
+                                <div class="ai-name">HeyGen</div>
+                                <span class="ai-badge badge-paid">Paid</span>
+                            </div>
+                            <div class="ai-desc">AI avatar and voice generation for creating professional video content with digital presenters.</div>
+                            <a href="https://heygen.com" class="ai-link">heygen.com →</a>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Audio & Music AI</div>
+                        
+                        <div class="ai-card" data-category="audio">
+                            <div class="ai-card-header">
+                                <div class="ai-name">ElevenLabs</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">Realistic text-to-speech and voice cloning AI with emotion control and multilingual support.</div>
+                            <a href="https://elevenlabs.io" class="ai-link">elevenlabs.io →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="audio">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Suno AI</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">Create full songs with lyrics and music from text prompts in seconds. V4 model in 2026.</div>
+                            <a href="https://suno.ai" class="ai-link">suno.ai →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="audio">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Udio</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">AI music generation with high-quality audio output and genre-specific training.</div>
+                            <a href="https://udio.com" class="ai-link">udio.com →</a>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Coding & Development AI</div>
+                        
+                        <div class="ai-card" data-category="code">
+                            <div class="ai-card-header">
+                                <div class="ai-name">GitHub Copilot</div>
+                                <span class="ai-badge badge-paid">Paid</span>
+                            </div>
+                            <div class="ai-desc">AI pair programmer integrated into VS Code, suggesting code completions and entire functions.</div>
+                            <a href="https://github.com/features/copilot" class="ai-link">github.com/copilot →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="code">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Cursor</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">AI-first code editor with powerful autocomplete and codebase understanding features.</div>
+                            <a href="https://cursor.sh" class="ai-link">cursor.sh →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="code">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Replit AI</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">Cloud-based IDE with AI code generation, debugging, and deployment assistance.</div>
+                            <a href="https://replit.com" class="ai-link">replit.com →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="code">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Claude Code</div>
+                                <span class="ai-badge badge-paid">Paid</span>
+                            </div>
+                            <div class="ai-desc">Command-line agentic coding tool by Anthropic for delegating coding tasks directly from terminal.</div>
+                            <a href="https://claude.ai/code" class="ai-link">claude.ai/code →</a>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Productivity & Business AI</div>
+                        
+                        <div class="ai-card" data-category="text">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Notion AI</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">AI writing assistant integrated into Notion for notes, summaries, and content generation.</div>
+                            <a href="https://notion.so" class="ai-link">notion.so →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="text">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Jasper AI</div>
+                                <span class="ai-badge badge-paid">Paid</span>
+                            </div>
+                            <div class="ai-desc">Marketing-focused AI for creating ads, blog posts, social media content, and copy.</div>
+                            <a href="https://jasper.ai" class="ai-link">jasper.ai →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="text">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Copy.ai</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">AI copywriting tool for marketing content, product descriptions, and sales copy.</div>
+                            <a href="https://copy.ai" class="ai-link">copy.ai →</a>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Research & Data AI</div>
+                        
+                        <div class="ai-card" data-category="text">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Consensus</div>
+                                <span class="ai-badge badge-free">Free</span>
+                            </div>
+                            <div class="ai-desc">AI search engine for scientific research papers with citation extraction and summaries.</div>
+                            <a href="https://consensus.app" class="ai-link">consensus.app →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="text">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Elicit</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">Research assistant AI that analyzes academic papers and extracts key information.</div>
+                            <a href="https://elicit.org" class="ai-link">elicit.org →</a>
+                        </div>
+
+                        <div class="ai-card" data-category="text">
+                            <div class="ai-card-header">
+                                <div class="ai-name">Julius AI</div>
+                                <span class="ai-badge badge-freemium">Freemium</span>
+                            </div>
+                            <div class="ai-desc">Data analysis AI that interprets spreadsheets, creates visualizations, and provides insights.</div>
+                            <a href="https://julius.ai" class="ai-link">julius.ai →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GETTING STARTED TAB -->
+            <div id="getting-started" class="tab-content">
+                <div class="section">
+                    <div class="section-title">Quick Start Instructions</div>
+                    
+                    <div class="tip-box">
+                        <strong>🎯 Choose Your Path</strong>
+                        Select AI tools based on your needs: Text AI for writing, Image AI for visuals, Code AI for programming, or Audio AI for sound creation.
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        <span class="step-title">Create Your Account</span>
+                        <div class="step-desc">Visit your chosen AI platform and sign up with email or Google/GitHub. Most offer free tiers to start.</div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        <span class="step-title">Explore the Interface</span>
+                        <div class="step-desc">Familiarize yourself with the chat interface, toolbar options, and settings. Look for tutorials or welcome guides.</div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        <span class="step-title">Try Simple Prompts</span>
+                        <div class="step-desc">Start with basic requests like "Explain quantum physics simply" or "Create a logo concept for a coffee shop".</div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">4</span>
+                        <span class="step-title">Learn Prompt Engineering</span>
+                        <div class="step-desc">Improve results by being specific, providing context, and iterating on outputs. See the Skills tab for advanced techniques.</div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">5</span>
+                        <span class="step-title">Combine Multiple Tools</span>
+                        <div class="step-desc">Use Claude for research → Midjourney for images → Runway for video → ElevenLabs for voiceover to create complete projects.</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Essential Tips</div>
+                    
+                    <div class="tip-box">
+                        <strong>💡 Be Specific</strong>
+                        Instead of "write a story", try "write a 500-word sci-fi story about a robot discovering emotions, aimed at young adults, with a hopeful tone".
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>🔄 Iterate & Refine</strong>
+                        Don't expect perfection on the first try. Ask the AI to revise, adjust tone, or add more details to improve results.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>📋 Save Good Prompts</strong>
+                        When you find a prompt that works well, save it as a template for future use with minor modifications.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>⚖️ Understand Limitations</strong>
+                        AI can make mistakes, hallucinate facts, or produce biased content. Always verify important information.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Choosing the Right AI Tool</div>
+                    
+                    <div class="ai-card">
+                        <div class="ai-name">For Writing & Research</div>
+                        <div class="ai-desc">Use Claude, ChatGPT, or Gemini for essays, articles, code, analysis, and research tasks.</div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">For Creative Visuals</div>
+                        <div class="ai-desc">Use Midjourney for artistic images, DALL-E for precise concepts, or Leonardo AI for consistent characters.</div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">For Video Content</div>
+                        <div class="ai-desc">Use Runway for professional editing, Pika for quick animations, or HeyGen for AI presenters.</div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">For Voice & Music</div>
+                        <div class="ai-desc">Use ElevenLabs for realistic voiceovers, Suno AI for complete songs, or Udio for instrumental tracks.</div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">For Programming</div>
+                        <div class="ai-desc">Use GitHub Copilot for real-time coding, Cursor for AI-first development, or Claude Code for terminal tasks.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP BY STEP TAB -->
+            <div id="step-by-step" class="tab-content">
+                <div class="section">
+                    <div class="section-title">Complete Workflows</div>
+
+                    <div class="step-card">
+                        <span class="step-number">📝</span>
+                        <span class="step-title">Writing a Blog Post</span>
+                        <div class="step-desc">
+                            <strong>1.</strong> Research your topic with Perplexity AI or Claude<br>
+                            <strong>2.</strong> Create an outline with main points and subheadings<br>
+                            <strong>3.</strong> Write the full article using ChatGPT or Claude<br>
+                            <strong>4.</strong> Generate a featured image with Midjourney or DALL-E<br>
+                            <strong>5.</strong> Edit and refine with AI feedback for clarity and SEO
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">🎨</span>
+                        <span class="step-title">Creating Social Media Content</span>
+                        <div class="step-desc">
+                            <strong>1.</strong> Brainstorm post ideas with ChatGPT (give context about your brand)<br>
+                            <strong>2.</strong> Generate eye-catching images with Midjourney or Leonardo AI<br>
+                            <strong>3.</strong> Write captions and hashtags with Copy.ai or Claude<br>
+                            <strong>4.</strong> Create short video clips with Runway or Pika<br>
+                            <strong>5.</strong> Add voiceover narration with ElevenLabs if needed
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">🎬</span>
+                        <span class="step-title">Producing a Marketing Video</span>
+                        <div class="step-desc">
+                            <strong>1.</strong> Write a script with ChatGPT (specify length and target audience)<br>
+                            <strong>2.</strong> Generate storyboard images with DALL-E or Midjourney<br>
+                            <strong>3.</strong> Create video clips from images using Runway or Pika<br>
+                            <strong>4.</strong> Generate professional voiceover with ElevenLabs<br>
+                            <strong>5.</strong> Add background music with Suno AI or Udio<br>
+                            <strong>6.</strong> Edit and combine everything in traditional video software
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">💻</span>
+                        <span class="step-title">Building a Simple Web App</span>
+                        <div class="step-desc">
+                            <strong>1.</strong> Plan your app features with Claude (get technical advice)<br>
+                            <strong>2.</strong> Generate HTML/CSS layout with GitHub Copilot or Claude<br>
+                            <strong>3.</strong> Write JavaScript functionality with Cursor or Replit AI<br>
+                            <strong>4.</strong> Debug errors by asking Claude to review your code<br>
+                            <strong>5.</strong> Create app icons and graphics with Midjourney<br>
+                            <strong>6.</strong> Deploy on platforms like Vercel, Netlify, or Replit
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">📊</span>
+                        <span class="step-title">Analyzing Data & Creating Reports</span>
+                        <div class="step-desc">
+                            <strong>1.</strong> Upload your dataset to Claude or Julius AI<br>
+                            <strong>2.</strong> Ask for statistical analysis and key insights<br>
+                            <strong>3.</strong> Request data visualizations (charts, graphs)<br>
+                            <strong>4.</strong> Generate a written report with findings using Claude<br>
+                            <strong>5.</strong> Create presentation slides with AI-generated content<br>
+                            <strong>6.</strong> Design infographics with Canva + AI-generated elements
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">🎵</span>
+                        <span class="step-title">Producing a Podcast Episode</span>
+                        <div class="step-desc">
+                            <strong>1.</strong> Research episode topic with Perplexity AI<br>
+                            <strong>2.</strong> Write episode outline and talking points with Claude<br>
+                            <strong>3.</strong> Create intro/outro music with Suno AI or Udio<br>
+                            <strong>4.</strong> Generate AI voiceover if needed with ElevenLabs<br>
+                            <strong>5.</strong> Write show notes and episode description with ChatGPT<br>
+                            <strong>6.</strong> Create podcast cover art with Midjourney
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">📚</span>
+                        <span class="step-title">Writing an E-book</span>
+                        <div class="step-desc">
+                            <strong>1.</strong> Brainstorm book concept and outline with Claude<br>
+                            <strong>2.</strong> Write each chapter with ChatGPT or Claude (iterate per chapter)<br>
+                            <strong>3.</strong> Generate chapter illustrations with Midjourney<br>
+                            <strong>4.</strong> Create book cover design with Leonardo AI or DALL-E<br>
+                            <strong>5.</strong> Edit and proofread with AI assistance<br>
+                            <strong>6.</strong> Format for e-readers using Calibre or similar tools
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Pro Workflow Tips</div>
+
+                    <div class="tip-box">
+                        <strong>⚡ Speed Up with Templates</strong>
+                        Create reusable prompt templates for recurring tasks. Example: "Write a [TYPE] about [TOPIC] in [TONE] for [AUDIENCE]".
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>🔗 Chain AI Tools</strong>
+                        Output from one AI becomes input for another. Use Claude to write, Midjourney to visualize, and ElevenLabs to narrate.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>💾 Document Your Process</strong>
+                        Keep a notes file with successful prompts, settings, and workflows that worked well for future reference.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SKILLS TAB -->
+            <div id="skills" class="tab-content">
+                <div class="section">
+                    <div class="section-title">Skill Progression Path</div>
+
+                    <div class="skill-level">
+                        <div class="skill-icon skill-beginner">🌱</div>
+                        <div class="skill-info">
+                            <div class="skill-name">Beginner - Basic Prompting</div>
+                            <div class="skill-desc">Learn to write clear requests, understand AI responses, and use simple commands effectively.</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-level">
+                        <div class="skill-icon skill-intermediate">🌿</div>
+                        <div class="skill-info">
+                            <div class="skill-name">Intermediate - Advanced Prompting</div>
+                            <div class="skill-desc">Master context setting, role-playing, iterative refinement, and multi-step instructions.</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-level">
+                        <div class="skill-icon skill-advanced">🌳</div>
+                        <div class="skill-info">
+                            <div class="skill-name">Advanced - AI Orchestration</div>
+                            <div class="skill-desc">Combine multiple AI tools, automate workflows, and create complex projects using AI pipelines.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Essential Prompt Engineering Techniques</div>
+
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        <span class="step-title">Be Specific and Detailed</span>
+                        <div class="step-desc">
+                            <strong>Bad:</strong> "Write about dogs"<br>
+                            <strong>Good:</strong> "Write a 300-word informative article about Golden Retrievers as family pets, including temperament, care requirements, and why they're suitable for children. Use a friendly, conversational tone."
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        <span class="step-title">Provide Context and Constraints</span>
+                        <div class="step-desc">
+                            Include: Target audience, desired format, tone, length, style preferences, and any specific requirements. Example: "Explain blockchain to a 12-year-old in 3 paragraphs using everyday analogies."
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        <span class="step-title">Use Role-Playing</span>
+                        <div class="step-desc">
+                            Ask the AI to assume a specific role: "Act as a senior software engineer reviewing this code..." or "You are a marketing expert helping a small business..."
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">4</span>
+                        <span class="step-title">Give Examples (Few-Shot Learning)</span>
+                        <div class="step-desc">
+                            Show the AI what you want by providing 2-3 examples of the desired output format, style, or structure before asking for new content.
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">5</span>
+                        <span class="step-title">Break Down Complex Tasks</span>
+                        <div class="step-desc">
+                            Instead of one huge request, split into steps: "First, create an outline. Then, write the introduction. Next, develop point 1..." This produces better results.
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">6</span>
+                        <span class="step-title">Iterate and Refine</span>
+                        <div class="step-desc">
+                            Use follow-up prompts: "Make it more concise", "Add more technical details", "Change the tone to be more formal", "Expand on the third paragraph".
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">7</span>
+                        <span class="step-title">Specify Output Format</span>
+                        <div class="step-desc">
+                            Request specific formats: "Provide as a numbered list", "Create a table with 3 columns", "Write in markdown format", "Structure as JSON data".
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">8</span>
+                        <span class="step-title">Use Negative Prompting</span>
+                        <div class="step-desc">
+                            Tell the AI what NOT to include: "Explain quantum physics without using complex mathematical formulas" or "Design a logo without using the color blue".
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Advanced Techniques</div>
+
+                    <div class="tip-box">
+                        <strong>🎯 Chain-of-Thought Prompting</strong>
+                        Ask the AI to "think step-by-step" or "explain your reasoning" for complex problems. This improves accuracy on logical tasks.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>🔄 Self-Consistency</strong>
+                        Generate multiple responses to the same prompt, then ask the AI to synthesize the best elements from each into a final answer.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>📊 Temperature Control</strong>
+                        In tools that allow it, lower temperature (0.3-0.5) for factual tasks, higher (0.7-0.9) for creative work.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>🧩 Modular Prompting</strong>
+                        Build reusable prompt components: [Role] + [Task] + [Context] + [Format] + [Constraints]. Mix and match for different needs.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Image Generation Prompt Skills</div>
+
+                    <div class="step-card">
+                        <span class="step-number">🎨</span>
+                        <span class="step-title">Image Prompt Structure</span>
+                        <div class="step-desc">
+                            <strong>Format:</strong> [Subject] + [Style] + [Composition] + [Lighting] + [Colors] + [Quality]<br><br>
+                            <strong>Example:</strong> "A majestic lion, digital art, close-up portrait, golden hour lighting, warm orange and gold tones, highly detailed, 8K, trending on ArtStation"
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">💡</span>
+                        <span class="step-title">Key Image Keywords</span>
+                        <div class="step-desc">
+                            <strong>Styles:</strong> photorealistic, oil painting, watercolor, anime, 3D render, pixel art<br>
+                            <strong>Quality:</strong> highly detailed, 8K, masterpiece, professional photography<br>
+                            <strong>Lighting:</strong> golden hour, dramatic lighting, soft diffused light, neon lighting<br>
+                            <strong>Camera:</strong> wide angle, macro shot, aerial view, fisheye lens
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BEGINNER TAB -->
+            <div id="beginner" class="tab-content">
+                <div class="section">
+                    <div class="section-title">Complete Beginner's Guide</div>
+
+                    <div class="tip-box">
+                        <strong>👋 Welcome to AI!</strong>
+                        Artificial Intelligence tools are programs that can understand your requests and create content, answer questions, or solve problems. Think of them as super-smart assistants that can help with almost any task.
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">Q</span>
+                        <span class="step-title">What Can AI Do?</span>
+                        <div class="step-desc">
+                            AI can write text, create images, generate code, analyze data, compose music, edit videos, translate languages, summarize documents, and much more. Each AI tool specializes in different tasks.
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">Q</span>
+                        <span class="step-title">Is AI Free to Use?</span>
+                        <div class="step-desc">
+                            Many AI tools offer free tiers with basic features. Premium versions with more capabilities typically cost $10-30/month. Start with free versions to learn before upgrading.
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">Q</span>
+                        <span class="step-title">How Do I Talk to AI?</span>
+                        <div class="step-desc">
+                            Simply type your request in natural language, like you're texting a friend. Be clear about what you want. Example: "Write a funny poem about cats" or "Explain how photosynthesis works".
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">Q</span>
+                        <span class="step-title">What If the Result Isn't Good?</span>
+                        <div class="step-desc">
+                            Just ask the AI to revise it! Say things like "make it shorter", "add more detail", "use simpler words", or "try again with a different approach". AI learns from your feedback.
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">Q</span>
+                        <span class="step-title">Can AI Make Mistakes?</span>
+                        <div class="step-desc">
+                            Yes! AI can sometimes provide incorrect information, misunderstand requests, or generate biased content. Always verify important facts and use critical thinking.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Your First AI Conversations</div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">Try This: Simple Writing Task</div>
+                        <div class="ai-desc">
+                            <strong>Type:</strong> "Write a short paragraph explaining what smartphones are to someone from the 1950s"<br>
+                            <strong>Why:</strong> This tests the AI's ability to simplify concepts and adjust for different audiences.
+                        </div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">Try This: Creative Request</div>
+                        <div class="ai-desc">
+                            <strong>Type:</strong> "Create a logo concept for a coffee shop called 'Sunrise Brew'" (in Midjourney/DALL-E)<br>
+                            <strong>Why:</strong> This shows how AI can generate visual ideas instantly.
+                        </div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">Try This: Learning Something New</div>
+                        <div class="ai-desc">
+                            <strong>Type:</strong> "Explain the basics of investing in stocks for a complete beginner. Use simple language."<br>
+                            <strong>Why:</strong> AI is excellent for learning new topics at your own pace.
+                        </div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">Try This: Problem Solving</div>
+                        <div class="ai-desc">
+                            <strong>Type:</strong> "I need to organize a small birthday party for 10 people. Give me a checklist of things to prepare."<br>
+                            <strong>Why:</strong> AI can help plan and organize everyday tasks.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Common Terms Explained</div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">Prompt</div>
+                        <div class="ai-desc">The text you type to tell the AI what you want. A good prompt is clear and specific.</div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">Token</div>
+                        <div class="ai-desc">A piece of text (roughly a word or part of a word) that AI processes. Many tools have token limits per request.</div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">Model</div>
+                        <div class="ai-desc">The specific version of AI you're using. Examples: GPT-4, Claude Sonnet 4.5, Midjourney v6. Newer models are usually better.</div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">Hallucination</div>
+                        <div class="ai-desc">When AI confidently provides incorrect information or makes up facts. Always verify important details.</div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">Fine-tuning</div>
+                        <div class="ai-desc">Training AI on specific data to make it better at certain tasks. Advanced users can fine-tune some models.</div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">API</div>
+                        <div class="ai-desc">Application Programming Interface - a way for developers to integrate AI into their own apps and websites.</div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">Context Window</div>
+                        <div class="ai-desc">How much previous conversation the AI can remember. Larger context = better understanding of long conversations.</div>
+                    </div>
+
+                    <div class="ai-card">
+                        <div class="ai-name">Temperature</div>
+                        <div class="ai-desc">A setting that controls creativity. Low = more factual and consistent, High = more creative and varied.</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Safety & Ethics</div>
+
+                    <div class="tip-box">
+                        <strong>🔒 Protect Your Privacy</strong>
+                        Don't share passwords, credit card numbers, or sensitive personal information with AI tools. Your conversations may be reviewed.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>✅ Verify Information</strong>
+                        AI can be wrong. Always fact-check important information, especially for medical, legal, or financial advice.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>©️ Respect Copyright</strong>
+                        AI-generated content may have usage restrictions. Check terms of service before using AI content commercially.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>🤝 Use AI Ethically</strong>
+                        Don't use AI to create harmful content, spread misinformation, impersonate others, or bypass security systems.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>🎓 Disclose AI Usage</strong>
+                        In academic or professional settings, be transparent when you've used AI assistance. Check your institution's AI policy.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Next Steps</div>
+
+                    <div class="quick-links">
+                        <a href="#" class="quick-link" onclick="switchTab('directory'); return false;">Explore Tools</a>
+                        <a href="#" class="quick-link" onclick="switchTab('skills'); return false;">Learn Skills</a>
+                        <a href="#" class="quick-link" onclick="switchTab('step-by-step'); return false;">Try Workflows</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching
+        function switchTab(tabName) {
+            // Hide all tab contents
+            const allTabs = document.querySelectorAll('.tab-content');
+            allTabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active class from all nav tabs
+            const allNavTabs = document.querySelectorAll('.nav-tab');
+            allNavTabs.forEach(navTab => navTab.classList.remove('active'));
+
+            // Show selected tab
+            const selectedTab = document.getElementById(tabName);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+
+            // Activate corresponding nav tab
+            const navTabs = document.querySelectorAll('.nav-tab');
+            navTabs.forEach(navTab => {
+                if (navTab.textContent.toLowerCase().includes(tabName.split('-')[0]) || 
+                    (tabName === 'getting-started' && navTab.textContent.includes('Get Started')) ||
+                    (tabName === 'step-by-step' && navTab.textContent.includes('Step-by-Step'))) {
+                    navTab.classList.add('active');
+                }
+            });
+
+            // Scroll to top
+            document.querySelector('.content').scrollTop = 0;
+        }
+
+        // Search functionality
+        function searchAI() {
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            const aiCards = document.querySelectorAll('.ai-card');
+
+            aiCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Category filtering
+        let currentFilter = 'all';
+        function filterCategory(category) {
+            currentFilter = category;
+            const aiCards = document.querySelectorAll('.ai-card[data-category]');
+
+            aiCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Reset search box
+            document.getElementById('searchBox').value = '';
+        }
+    </script>
+</body>
+</html>
